@@ -6,13 +6,13 @@
 # import python libraries
 ###############################################################
 import streamlit as st
+import base64
 
 ###############################################################
 # page info
 ###############################################################
 st.set_page_config(
-    page_title="Examples of streamlit commands | HKUST Digital Humanities Initiative",
-    page_icon="👋",
+    page_title="Econ Releated Stuff",
 )
 
 ###############################################################
@@ -20,17 +20,13 @@ st.set_page_config(
 ###############################################################
 with st.sidebar:
     st.markdown("""
-                [HKUST Digital Humanities Initiative](https://digitalhumanities.hkust.edu.hk/)
-                """)
-    st.markdown("""
-                This website serves as a demo to showcase the capabilities and functionalities of Streamlit in creating web applications. If you are interested in learning the step-by-step process of how this website was created, please refers to [our article](https://digitalhumanities.hkust.edu.hk/tutorials/learn-python-from-zero-for-absolute-beginner-3-create-website/) for detailed instructions and explanations.
+                Include my powerpoint during my study times and my economic thingkings
                 """)
 
 ###############################################################
 # page content
 ###############################################################
-st.caption("Demo by HKUST Digital Humanities Initiative")
-st.title("Examples of Streamlit Commands")
+st.title("Serious Stuff")
 
 st.markdown(
     """
@@ -40,6 +36,21 @@ st.markdown(
 
     """)
 
-st.image('./images/streamlit-doc.gif')
+def get_pdf_download_link(pdf_file):
+    with open(pdf_file, "rb") as f:
+        pdf_data = f.read()
+    b64 = base64.b64encode(pdf_data).decode()
+    return f'<iframe src="data:application/pdf;base64,{b64}" width="700" height="500" type="application/pdf"></iframe>'
 
+st.title("PDF Viewer")
+
+uploaded_file = st.file_uploader("Upload a PDF file", type=["pdf"])
+
+if uploaded_file is not None:
+    # Save the uploaded PDF to a temporary file
+    with open("uploaded_file.pdf", "wb") as f:
+        f.write(uploaded_file.read())
+    
+    # Display the PDF
+    st.markdown(get_pdf_download_link("uploaded_file.pdf"), unsafe_allow_html=True)
 
