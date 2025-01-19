@@ -51,21 +51,7 @@ st.markdown("---")
 
 ######################################################################
 
-# If you're looking for a detailed explanation about this part of code, please read our article : https://digitalhumanities.hkust.edu.hk/tutorials/learn-python-from-zero-for-absolute-beginner-1-data-cleaning/
 
-st.markdown("## Do not Worry! It is just me ")
-
-# two columns layout
-
-    # show image
-st.image('images/微信图片_20241012103943.jpg')
-
-
-
-
-st.markdown('---')
-   
-# Data pre-processing
 
 
 
