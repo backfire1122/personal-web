@@ -26,15 +26,13 @@ with st.sidebar:
 ###############################################################
 # page content
 ###############################################################
-st.title("Serious Stuff")
+st.title("Econ paper presentation Growing Like China ")
 
-st.markdown(
-    """
-    Streamlit offers numerous possibilities from creating interactive visualizations to building data-driven web applications. We highly recommend you to explore its full potential by reading its documentation. Discover the vast possibilities that Streamlit offers!
 
-    👉 https://docs.streamlit.io/library/api-reference
+pdf_path = "example.pdf"  # Path to your PDF file
+with open(pdf_path, "rb") as pdf_file:
+    st.pdf(pdf_file)
 
-    """)
 
 def get_pdf_download_link(pdf_file):
     with open(pdf_file, "rb") as f:
