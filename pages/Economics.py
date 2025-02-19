@@ -29,7 +29,7 @@ with st.sidebar:
 st.title("Econ paper presentation Growing Like China ")
 
 
-pdf_path = "example.pdf"  # Path to your PDF file
+pdf_path = ".devcontainer/Growing_Like_China_Macro_Presenation"  # Path to your PDF file
 with open(pdf_path, "rb") as pdf_file:
     st.pdf(pdf_file)
 
